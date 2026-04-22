@@ -1,33 +1,29 @@
+# 1. Importing extensions
 import streamlit as st
 
-st.set_page_config(layout="wide")
+# 2. Creating app title
+st.title('Welcome to PizzaHub🍕', 
+         text_alignment='center')
 
-st.title("Welcome to PizzaHub 🍕")
-st.subheader("The best Italian in town!")
+# 3. App slogan
+st.subheader('The best italian restaurant serving pizza, pasta, and cool drinks')
 
-st.image("images/hero.jpg")
-
+# 4. Adding hero image
+st.image('images/hero.jpg')
 st.divider()
 
-col1, col2 = st.columns(2)
-import streamlit as st
-
-# ... (أي كود موجود قبل كدة) ...
-
-col1, col2 = st.columns(2)
-
+# 5. Creating columns
+col1, col2 = st.columns(2, border=True)
 with col1:
-    with st.container(border=True):
-        st.markdown("### 🍴 Hungry?")
-        st.write("Browse pizzas, pasta, and drinks.")
-        # زرار يودي للمنيو
-        if st.button("Open Menu 🍕", use_container_width=True):
-            st.switch_page("pages/menu.py")
+    st.header('🍽️ Hungry?', text_alignment='center')
+    st.subheader('Start exploring our menu')
+    if st.button('Go to Menu 🍕', 
+                 use_container_width=True):
+        st.switch_page('pages/menu.py')
 
 with col2:
-    with st.container(border=True):
-        st.markdown("### ✨ Need help?")
-        st.write("Talk to AI assistant.")
-        # الزرار اللي طلبتيه
-        if st.button("Open Chatbot 🤖", use_container_width=True):
-            st.switch_page("pages/chatbot.py")
+    st.header('✨ Need help?', text_alignment='center')
+    st.subheader('Chat with our AI assitant')
+    if st.button('Chat with AI 🧠', 
+                 use_container_width=True):
+        st.switch_page('pages/chatbot.py')
